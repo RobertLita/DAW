@@ -21,6 +21,5 @@ namespace proiect_daw.Models
         public ushort HP { get; set; }
         public string Transmission { get; set; }
         public string VIN { get; set; }
-        public string Type { get; set; }
     }
 }
