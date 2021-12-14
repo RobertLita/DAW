@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using proiect_daw.Models;
 
 namespace proiect_daw
 {
@@ -27,6 +29,7 @@ namespace proiect_daw
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<Models.AppContext>(options => options.UseSqlServer(Configuration.GetConnectionString("WebProjectConnString")));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "proiect_daw", Version = "v1" });
