@@ -12,5 +12,8 @@ namespace proiect_daw.Models
             : base(options)
         {}
         public DbSet<Car> Cars { get; set; }
+        public DbSet<Owner> Owners { get; set; }
+        public DbSet<Rim> Rims { get; set; }
+        public DbSet<History> Histories { get; set; }
     }
 }
