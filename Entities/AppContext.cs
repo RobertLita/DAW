@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace proiect_daw.Models
+namespace proiect_daw.Entities
 {
     public class AppContext : DbContext
     {

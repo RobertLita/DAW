@@ -4,7 +4,7 @@ using System.Linq;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 
-namespace proiect_daw.Models
+namespace proiect_daw.Entities
 {
     public class History
     {

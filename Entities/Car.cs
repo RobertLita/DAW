@@ -5,12 +5,12 @@ using System.Linq;
 using System.Web;
 
 
-namespace proiect_daw.Models
+namespace proiect_daw.Entities
 {
     public class Car
     {
         [Key]
-        public int CarID { get; set; }
+        public string CarID { get; set; }
         [Required(ErrorMessage = "Brandul mașinii este obligatoriu!")]
         public string Brand { get; set; }
         [Required(ErrorMessage = "Modelul mașinii este obligatoriu!")]
@@ -35,8 +35,8 @@ namespace proiect_daw.Models
         public string VIN { get; set; }
         [Required(ErrorMessage = "Tipul de caroserie al mașinii este obligatoriu!")]
         public string Type { get; set; }
-        public int RimsID { get; set; }
-        public int OwnerID { get; set; }
-        public int HistoryID { get; set; }
+        public string RimsID { get; set; }
+        public string OwnerID { get; set; }
+        public string HistoryID { get; set; }
     }
 }
