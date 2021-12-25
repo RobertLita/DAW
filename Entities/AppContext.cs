@@ -15,5 +15,32 @@ namespace proiect_daw.Entities
         public DbSet<Owner> Owners { get; set; }
         public DbSet<Rim> Rims { get; set; }
         public DbSet<History> Histories { get; set; }
+        public DbSet<CarRim> CarRims { get; set; }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            //One to One
+            builder.Entity<Car>()
+                .HasOne(car => car.History)
+                .WithOne(history => history.Car);
+
+            //One to Many
+            builder.Entity<Owner>()
+                .HasMany(owner => owner.Cars)
+                .WithOne(car => car.Owner);
+
+            //Many To Many
+            builder.Entity<CarRim>().HasKey(cr => new { cr.CarID, cr.RimID });
+
+            builder.Entity<CarRim>()
+                .HasOne(cr => cr.Car)
+                .WithMany(car => car.CarRims)
+                .HasForeignKey(cr => cr.CarID);
+
+            builder.Entity<CarRim>()
+                .HasOne(cr => cr.Rim)
+                .WithMany(rim => rim.CarRims)
+                .HasForeignKey(cr => cr.RimID);
+        }
     }
 }

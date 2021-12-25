@@ -17,6 +17,6 @@ namespace proiect_daw.Entities
         [Required(ErrorMessage = "Numărul de telefon este obligatoriu!")]
         public string Telephone { get; set; }
         public string City { get; set; }
-        public int CarID { get; set; }
+        public virtual ICollection<Car> Cars { get; set; }
     }
 }

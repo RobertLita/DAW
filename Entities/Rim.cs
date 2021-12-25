@@ -17,5 +17,6 @@ namespace proiect_daw.Entities
         public int ET { get; set; }
         public int J { get; set; }
         public int HubSize { get; set; }
+        public virtual ICollection<CarRim> CarRims { get; set; }
     }
 }

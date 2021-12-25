@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using proiect_daw.Entities;
 using proiect_daw.Managers;
+using proiect_daw.Models;
 
 namespace proiect_daw.Controllers
 {
@@ -24,20 +25,63 @@ namespace proiect_daw.Controllers
 
 
         [HttpGet]
-        [Authorize(Policy = "BasicUser")]
+        //[Authorize(Policy = "BasicUser")]
         public async Task<IActionResult> GetCars()
         {
             var cars = manager.GetCars();
 
             return Ok(cars);
         }
+        [HttpGet("select-id")]
+        //[Authorize(Policy = "Admin")]
+        public async Task<IActionResult> GetIds()
+        {
+            var idList = manager.GetCarsIdsList();
+
+            return Ok(idList);
+        }
+        [HttpGet("filter/{brand}")]
+        public async Task<IActionResult> Filtered([FromRoute] string brand)
+        {
+            var carsFiltered = manager.GetCarsFiltered(brand);
+
+            return Ok(carsFiltered);
+        }
 
         [HttpGet("byId/{id}")]
-        public async Task<IActionResult> GetById([FromRoute] string id)
+        public async Task<IActionResult> GetById([FromRoute] int id)
         {
             var car = manager.GetCarById(id);
 
             return Ok(car);
+        }
+        [HttpGet("order-by-asc")]
+        public async Task<IActionResult> OrderByAsc()
+        {
+            var orderedCars = manager.GetOrderedCars();
+
+            return Ok(orderedCars);
+        }
+        [HttpPost("withobj")]
+        public async Task<IActionResult> Create([FromBody]CarModel carModel)
+        {
+            manager.Create(carModel);
+
+            return Ok();
+        }
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] CarModel carModel)
+        {
+            manager.Update(carModel);
+
+            return Ok();
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete([FromRoute] int id)
+        {
+            manager.Delete(id);
+
+            return Ok();
         }
     }
 }

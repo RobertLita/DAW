@@ -15,6 +15,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using proiect_daw.Entities;
+using proiect_daw.Managers;
+using proiect_daw.Repositories;
 
 namespace proiect_daw
 {
@@ -36,38 +38,19 @@ namespace proiect_daw
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "proiect_daw", Version = "v1" });
-                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-                {
-                    Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n 
-                      Enter 'Bearer' [space] and then your token in the text input below.
-                      \r\n\r\nExample: 'Bearer 12345abcdef'",
-                    Name = "Authorization",
-                    In = ParameterLocation.Header,
-                    Type = SecuritySchemeType.ApiKey,
-                    Scheme = "Bearer"
-                });
-
-                c.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
-                    {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
-                            {
-                                Type = ReferenceType.SecurityScheme,
-                                Id = "Bearer"
-                            },
-                            Scheme = "oauth2",
-                            Name = "Bearer",
-                            In = ParameterLocation.Header
-                        },
-                        new List<string>()
-                    }
-                });
+                
+              
             });
 
             services.AddDbContext<Entities.AppContext>(options => options.UseSqlServer(@"Server=DESKTOP-QP1OEGN\\SQLEXPRESS;Initial Catalog=proiect_daw;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+            
+            services.AddTransient<ICarsRepository, CarsRepository>();//new instance of the service for each class that injects it
+            /*services.AddScoped<IAuthorsRepository, AuthorsRepository>(); //same instance of the service for the entire duration of the request
+            services.AddSingleton<IAuthorsRepository, AuthorsRepository>(); // one single instance in the entire app
+*/
+            services.AddTransient<ICarsManager, CarsManager>();
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
