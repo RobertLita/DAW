@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ComponentModel.DataAnnotations;
-using System.Threading.Tasks;
-
-namespace proiect_daw.Entities
+using System.Linq;
+using System.Web;
+using proiect_daw.Entities;
+namespace proiect_daw.Models
 {
-    public class Rim
+    public class RimModel
     {
         [Key]
         public int RimID { get; set; }
