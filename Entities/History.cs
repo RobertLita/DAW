@@ -11,6 +11,7 @@ namespace proiect_daw.Entities
         [Key]
         public int HistoryID { get; set; }
         public string CarHistory { get; set; }
+        public int CarID { get; set; }
         public virtual Car Car { get; set; }
     }
 }

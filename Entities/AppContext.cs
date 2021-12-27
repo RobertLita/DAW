@@ -22,7 +22,8 @@ namespace proiect_daw.Entities
             //One to One
             builder.Entity<Car>()
                 .HasOne(car => car.History)
-                .WithOne(history => history.Car);
+                .WithOne(history => history.Car)
+                .HasForeignKey<History>(h => h.CarID);
 
             //One to Many
             builder.Entity<Owner>()

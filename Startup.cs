@@ -42,7 +42,7 @@ namespace proiect_daw
               
             });
 
-            services.AddDbContext<Entities.AppContext>(options => options.UseSqlServer(@"Server=DESKTOP-QP1OEGN\\SQLEXPRESS;Initial Catalog=proiect_daw;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+            services.AddDbContext<Entities.AppContext>(options => options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Initial Catalog=proiect_daw;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
             
             services.AddTransient<ICarsRepository, CarsRepository>();//new instance of the service for each class that injects it
             /*services.AddScoped<IAuthorsRepository, AuthorsRepository>(); //same instance of the service for the entire duration of the request

@@ -99,8 +99,10 @@ namespace proiect_daw.Managers
             car.VIN = model.VIN;
             car.Type = model.Type;
             car.OwnerID = model.OwnerID;
-            //car.HistoryID = model.HistoryID;
+            car.HistoryID = model.HistoryID;
             car.CarRims = model.CarRims;
+            car.Owner = model.Owner;
+            car.History = model.History;
             carsRepository.Update(car);
         }
     }
