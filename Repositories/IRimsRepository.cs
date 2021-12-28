@@ -7,7 +7,7 @@ using proiect_daw.Models;
 
 namespace proiect_daw.Repositories
 {
-    interface IRimsRepository
+    public interface IRimsRepository
     {
         IQueryable<Rim> GetRimsIQueryable();
         void Create(Rim rim);

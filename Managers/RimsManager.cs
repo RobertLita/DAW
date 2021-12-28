@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using proiect_daw.Entities;
@@ -13,7 +11,7 @@ namespace proiect_daw.Managers
     public class RimsManager : IRimsManager
     {
         private readonly IRimsRepository rimsRepository;
-        public RimsManager(ICarsRepository carsRepository)
+        public RimsManager(IRimsRepository rimsRepository)
         {
             this.rimsRepository = rimsRepository;
         }

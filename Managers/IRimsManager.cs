@@ -8,10 +8,10 @@ using proiect_daw.Models;
 
 namespace proiect_daw.Managers
 {
-    interface IRimsManager
+    public interface IRimsManager
     {
         List<Rim> GetRims();
-        Car GetRimById(int id);
+        Rim GetRimById(int id);
         void Create(RimModel model);
         void Update(RimModel model);
         void Delete(int id);
