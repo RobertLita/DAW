@@ -14,7 +14,7 @@ namespace proiect_daw.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OwnerController
+    public class OwnerController : ControllerBase
     {
         private readonly IOwnersManager manager;
 
