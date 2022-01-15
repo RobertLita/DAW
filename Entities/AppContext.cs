@@ -16,6 +16,7 @@ namespace proiect_daw.Entities
         public DbSet<Rim> Rims { get; set; }
         public DbSet<History> Histories { get; set; }
         public DbSet<CarRim> CarRims { get; set; }
+        public DbSet<Bodykit> Bodykits { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

@@ -7,7 +7,7 @@ using proiect_daw.Models;
 
 namespace proiect_daw.Repositories
 {
-    interface IBodykitsRepository
+    public interface IBodykitsRepository
     {
         IQueryable<Bodykit> GetBodykitsIQueryable();
         void Create(Bodykit bodykit);

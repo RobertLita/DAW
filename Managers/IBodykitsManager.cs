@@ -8,7 +8,7 @@ using proiect_daw.Models;
 
 namespace proiect_daw.Managers
 {
-    interface IBodykitsManager
+    public interface IBodykitsManager
     {
         List<Bodykit> GetBodykits();
         Bodykit GetBodykitById(int id);
