@@ -1,3 +1,9 @@
-<router-outlet>
-  <p>Acesta este pagina principala</p>
-</router-outlet>
+<mat-toolbar class="navbar">
+  <div>Titlu</div>
+  <div>
+    <span><a routerLink="/cars">Mașini</a></span>
+    <span><a routerLink="/rims">Jante</a></span>
+    <span><a routerLink="/login">Bodykit-uri</a></span>
+  </div>
+</mat-toolbar>
+<router-outlet></router-outlet>
