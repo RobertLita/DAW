@@ -41,6 +41,7 @@ namespace proiect_daw.Controllers
             return Ok(idList);
         }
 
+
         [HttpGet("byId/{id}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
