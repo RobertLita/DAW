@@ -8,7 +8,7 @@ using proiect_daw.Models;
 
 namespace proiect_daw.Managers
 {
-    interface IOwnersManager
+    public interface IOwnersManager
     {
         List<Owner> GetOwners();
         Owner GetOwnerById(int id);
