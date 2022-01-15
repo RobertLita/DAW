@@ -7,7 +7,7 @@ using proiect_daw.Models;
 
 namespace proiect_daw.Repositories
 {
-    interface IOwnersRepository
+    public interface IOwnersRepository
     {
         IQueryable<Owner> GetOwnersIQueryable();
         void Create(Owner owner);
