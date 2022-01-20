@@ -1,0 +1,37 @@
+section.presentation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    >div{
+        margin-top: 90px;
+        width: 80%;
+        height: 500px;
+        background-color: #2a2a30;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 13px, rgba(0, 0, 0, 0.23) 0px 10px 13px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        h2{
+            text-align: center;
+        }
+        a{
+            margin: 1px solid black;
+            padding: 15px 20px 15px 20px;
+            border-radius: 5px;
+            color: #FFFAFA;
+            background-color: #9b3ce9;
+            text-decoration: none;
+        }
+        div{
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: auto;
+            word-wrap: break-word;
+        }
+    }
+    
+}
