@@ -7,7 +7,7 @@ using proiect_daw.Managers;
 
 namespace proiect_daw.Repositories
 {
-    public class OwnersRepository
+    public class OwnersRepository : IOwnersRepository
     {
         private Entities.AppContext db;
 
