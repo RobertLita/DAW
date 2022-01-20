@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   }
 
   public login(): void{
-    localStorage.setItem('Role', 'Admin');
+    //localStorage.setItem('Role', 'Admin');
     this.router.navigate(['/cars']);
   }
 }

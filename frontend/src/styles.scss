@@ -12,3 +12,11 @@ app-root{
 app-cars, app-rims, app-login, app-bodykits, app-home{
     flex: 1;
 }
+button{
+    border: 1px solid black;
+    padding: 10px 25px 10px 25px;
+    border-radius: 5px;
+    color: #FFFAFA;
+    background-color: #9b3ce9;
+    cursor: pointer;
+}

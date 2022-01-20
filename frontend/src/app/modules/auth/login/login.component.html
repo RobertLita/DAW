@@ -1,20 +1,24 @@
+<section>
 <div class="container">
+    <h2>Intră în contul tău chiar aici:</h2>
     <div class="form-sections">
         <form [formGroup]="loginForm" class="form">
             <mat-form-field apperance="outline">
-                <mat-label>Username:</mat-label>
+                <mat-label>Username</mat-label>
                 <input matInput placeholder="Username" formControlName="username"/>
             </mat-form-field>
 
             <mat-form-field apperance="outline">
-                <mat-label>Password:</mat-label>
+                <mat-label>Password</mat-label>
                 <input matInput placeholder="Password" formControlName="password" type="password"/>
             </mat-form-field>
         </form>
     </div>
-    <div class="message-section">
+    <!-- <div class="message-section">
         <p>
             Message
         </p>
-    </div>
+    </div> -->
+    <button mat-raised-button (click)="login()">Login</button>
 </div>
+</section>
