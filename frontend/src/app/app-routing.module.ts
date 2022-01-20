@@ -17,7 +17,15 @@ const routes: Routes = [
     loadChildren: () => import('src/app/modules/cars/cars.module').then(m => m.CarsModule),
   },
   {
+    path: 'newcar',
+    loadChildren: () => import('src/app/modules/cars/cars.module').then(m => m.CarsModule),
+  },
+  {
     path: 'login',
+    loadChildren: () => import('src/app/modules/auth/auth.module').then(m => m.AuthModule),
+  },
+  {
+    path: 'register',
     loadChildren: () => import('src/app/modules/auth/auth.module').then(m => m.AuthModule),
   },
   {
