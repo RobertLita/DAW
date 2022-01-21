@@ -1,32 +1,33 @@
 <section>
     <div class="container">
-        <h2>Creați-vă un cont chiar acum:</h2>
+        <h2>Adaugati un set de jante pentru vanzare:</h2>
         <div class="form-sections">
-            <form [formGroup]="registerForm" class="form">
+            <form [formGroup]="newbodykitForm" class="form">
                 <mat-form-field apperance="outline">
                     <mat-label>Username</mat-label>
                     <input matInput placeholder="Username" formControlName="username"/>
                 </mat-form-field>
     
                 <mat-form-field apperance="outline">
-                    <mat-label>Parola</mat-label>
-                    <input matInput placeholder="Password" formControlName="password" type="password"/>
+                    <mat-label>Brand</mat-label>
+                    <input matInput placeholder="Brand" formControlName="brand"/>
                 </mat-form-field>
 
                 <mat-form-field apperance="outline">
-                    <mat-label>E-mail</mat-label>
-                    <input matInput placeholder="Email" formControlName="email" type="email"/>
+                    <mat-label>Masina</mat-label>
+                    <input matInput placeholder="Car" formControlName="car"/>
                 </mat-form-field>
 
                 <mat-form-field apperance="outline">
-                    <mat-label>Telefon</mat-label>
-                    <input matInput placeholder="Telephon" formControlName="telephone" type="tel"/>
+                    <mat-label>Tip</mat-label>
+                    <input matInput placeholder="Type" formControlName="type"/>
                 </mat-form-field>
 
                 <mat-form-field apperance="outline">
-                    <mat-label>Oras</mat-label>
-                    <input matInput placeholder="City" formControlName="city" />
+                    <mat-label>Pret</mat-label>
+                    <input matInput placeholder="Price" formControlName="price"/>
                 </mat-form-field>
+                
             </form>
         </div>
         <!-- <div class="message-section">
@@ -34,6 +35,6 @@
                 Message
             </p>
         </div> -->
-        <button mat-raised-button (click)="register()">Register</button>
+        <button mat-raised-button (click)="newbodykit()">Adauga setul de jante</button>
     </div>
     </section>

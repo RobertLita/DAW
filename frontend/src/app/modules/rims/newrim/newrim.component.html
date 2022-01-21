@@ -1,0 +1,49 @@
+<section>
+    <div class="container">
+        <h2>Adaugati un set de jante pentru vanzare:</h2>
+        <div class="form-sections">
+            <form [formGroup]="newrimForm" class="form">
+                <mat-form-field apperance="outline">
+                    <mat-label>Username</mat-label>
+                    <input matInput placeholder="Username" formControlName="username"/>
+                </mat-form-field>
+    
+                <mat-form-field apperance="outline">
+                    <mat-label>Dimensiune</mat-label>
+                    <input matInput placeholder="Size" formControlName="size"/>
+                </mat-form-field>
+
+                <mat-form-field apperance="outline">
+                    <mat-label>Tip</mat-label>
+                    <input matInput placeholder="Type" formControlName="type"/>
+                </mat-form-field>
+
+                <mat-form-field apperance="outline">
+                    <mat-label>Pret</mat-label>
+                    <input matInput placeholder="Price" formControlName="price"/>
+                </mat-form-field>
+
+                <mat-form-field apperance="outline">
+                    <mat-label>ET</mat-label>
+                    <input matInput placeholder="ET" formControlName="ET"/>
+                </mat-form-field>
+
+                <mat-form-field apperance="outline">
+                    <mat-label>J</mat-label>
+                    <input matInput placeholder="J" formControlName="J"/>
+                </mat-form-field>
+
+                <mat-form-field apperance="outline">
+                    <mat-label>Dimensiune butuc</mat-label>
+                    <input matInput placeholder="Hub_Size" formControlName="hub_size"/>
+                </mat-form-field>
+            </form>
+        </div>
+        <!-- <div class="message-section">
+            <p>
+                Message
+            </p>
+        </div> -->
+        <button mat-raised-button (click)="newrim()">Adauga setul de jante</button>
+    </div>
+    </section>
