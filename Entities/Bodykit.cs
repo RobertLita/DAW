@@ -18,5 +18,7 @@ namespace proiect_daw.Entities
         public string CarModel { get; set; }
         //[Required(ErrorMessage = "Prețul bodykit-ului este obligatoriu!")]
         public int Price { get; set; }
+        public int CarID { get; set; }
+        public virtual Car Car { get; set; }
     }
 }

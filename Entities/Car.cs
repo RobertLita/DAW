@@ -40,5 +40,7 @@ namespace proiect_daw.Entities
         public virtual Owner Owner { get; set; }
         public int HistoryID { get; set; }
         public virtual History History{ get; set; }
+        public int BodykitID { get; set; }
+        public virtual ICollection<Bodykit> Bodykits { get; set; }
     }
 }

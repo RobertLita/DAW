@@ -31,6 +31,11 @@ namespace proiect_daw.Entities
                 .HasMany(owner => owner.Cars)
                 .WithOne(car => car.Owner);
 
+            //One to Many
+            builder.Entity<Car>()
+                .HasMany(car => car.Bodykits)
+                .WithOne(bodykit => bodykit.Car);
+
             //Many To Many
             builder.Entity<CarRim>().HasKey(cr => new { cr.CarID, cr.RimID });
 

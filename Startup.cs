@@ -44,11 +44,14 @@ namespace proiect_daw
 
             services.AddDbContext<Entities.AppContext>(options => options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Initial Catalog=proiect_daw;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
             
-            services.AddTransient<ICarsRepository, CarsRepository>();//new instance of the service for each class that injects it
-            /*services.AddScoped<IAuthorsRepository, AuthorsRepository>(); //same instance of the service for the entire duration of the request
-            services.AddSingleton<IAuthorsRepository, AuthorsRepository>(); // one single instance in the entire app
-*/
+            services.AddTransient<ICarsRepository, CarsRepository>();
             services.AddTransient<ICarsManager, CarsManager>();
+            services.AddTransient<IRimsRepository, RimsRepository>();
+            services.AddTransient<IRimsManager, RimsManager>();
+            services.AddTransient<IOwnersRepository, OwnersRepository>();
+            services.AddTransient<IOwnersManager, OwnersManager>();
+            services.AddTransient<IBodykitsRepository, BodykitsRepository>();
+            services.AddTransient<IBodykitsManager, BodykitsManager>();
         }
 
 
