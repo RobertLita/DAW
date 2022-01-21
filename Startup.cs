@@ -22,6 +22,7 @@ namespace proiect_daw
 {
     public class Startup
     {
+        public string SpecificOrigins = "_allowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -38,12 +39,20 @@ namespace proiect_daw
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "proiect_daw", Version = "v1" });
-                
-              
+
+
+            });
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: SpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("localhost:4200", "http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+                                  });
             });
 
             services.AddDbContext<Entities.AppContext>(options => options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Initial Catalog=proiect_daw;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
-            
+
             services.AddTransient<ICarsRepository, CarsRepository>();
             services.AddTransient<ICarsManager, CarsManager>();
             services.AddTransient<IRimsRepository, RimsRepository>();
@@ -68,7 +77,7 @@ namespace proiect_daw
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors(SpecificOrigins);
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
