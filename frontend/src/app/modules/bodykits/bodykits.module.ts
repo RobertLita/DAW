@@ -3,15 +3,23 @@ import { CommonModule } from '@angular/common';
 
 import { BodykitsRoutingModule } from './bodykits-routing.module';
 import { BodykitsComponent } from './bodykits/bodykits.component';
+import { NewBodyKitComponent} from './newbodykit/newbodykit.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    BodykitsComponent
+    BodykitsComponent,
+    NewBodyKitComponent
   ],
   imports: [
     CommonModule,
-    BodykitsRoutingModule
+    BodykitsRoutingModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 export class BodykitsModule { }

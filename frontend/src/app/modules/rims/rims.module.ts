@@ -3,15 +3,22 @@ import { CommonModule } from '@angular/common';
 
 import { RimsRoutingModule } from './rims-routing.module';
 import { RimsComponent } from './rims/rims.component';
-
+import { NewRimComponent} from './newrim/newrim.component';
+import { ReactiveFormsModule} from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
-    RimsComponent
+    RimsComponent,
+    NewRimComponent
   ],
   imports: [
     CommonModule,
-    RimsRoutingModule
+    RimsRoutingModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 export class RimsModule { }
