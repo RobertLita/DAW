@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CarsService } from 'src/app/services/cars.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class CarsComponent implements OnInit {
   ownerID:number, historyID:number, bodykitID:number}> = [];
   constructor(
     private carsService: CarsService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -25,6 +27,10 @@ export class CarsComponent implements OnInit {
         console.error(error);
       }
     );
+  }
+
+  public goToCar(id: any): void{
+    this.router.navigate(['/car', id]);
   }
 
 }

@@ -1,6 +1,6 @@
 <div class="container" *ngFor="let car of cars">
 
-    <a class="masina" routerLink="/rims">
+    <a class="masina" (click)="goToCar(car.carID)">
         <div class="stanga">
             <h2 class="titlu">{{car.brand + ' ' + car.model}}</h2>
             <p>An: {{car.year}}</p>
@@ -15,7 +15,8 @@
         <div class="dreapta">
             <h2>{{car.price + ' €'}} </h2>
             <p>Combustibil: {{car.fuel}}</p>
-            <p>Capacitate cilindrica: {{car.cubic_Capacity}} cm3</p>
+            <p *ngIf="car.cubic_Capacity > 0">Capacitate cilindrica: {{car.cubic_Capacity}} cm3</p>
+            <p *ngIf="car.cubic_Capacity == 0">Capacitate baterie: {{car.battery_Capacity}} kW</p>
             <p>Transmisie: {{car.transmission}}</p>
         </div>
     </a>
