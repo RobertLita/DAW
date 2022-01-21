@@ -8,7 +8,9 @@ import { CarsService } from 'src/app/services/cars.service';
 })
 export class CarsComponent implements OnInit {
 
-  public cars = [];
+  public cars : Array<{carID: number, brand: string, model: string, price: number, year: number, mileage:number , color: string
+  , fuel: string, HP: number, cubic_Capacity: number, battery_Capacity:number, transmission: string, VIN: string, type:string,  
+  ownerID:number, historyID:number, bodykitID:number}> = [];
   constructor(
     private carsService: CarsService,
   ) { }
@@ -16,6 +18,7 @@ export class CarsComponent implements OnInit {
   ngOnInit(): void {
     this.carsService.getCars().subscribe(
       (result) => {
+        this.cars = result;
         console.log(result);
       },
       (error) => {

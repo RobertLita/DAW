@@ -1,3 +1,25 @@
-<div>
-    <button mat-raised-button routerLink="/cars/newcar">Adauga o noua masina la vanzare</button>
+<div class="container" *ngFor="let car of cars">
+
+    <a class="masina" routerLink="/rims">
+        <div class="stanga">
+            <h2 class="titlu">{{car.brand + ' ' + car.model}}</h2>
+            <p>An: {{car.year}}</p>
+            <p>Km: {{car.mileage}}</p>
+            <p>Tip caroserie: {{car.type}}</p>
+        </div>
+        <div class="centru">
+            
+            <img src="./assets/cars.jpg" />
+            
+        </div>
+        <div class="dreapta">
+            <h2>{{car.price + ' €'}} </h2>
+            <p>Combustibil: {{car.fuel}}</p>
+            <p>Capacitate cilindrica: {{car.cubic_Capacity}} cm3</p>
+            <p>Transmisie: {{car.transmission}}</p>
+        </div>
+    </a>
 </div>
+<button mat-fab color="accent" aria-label="Adauga o masina" class="newcar" routerLink="/cars/newcar">
+        <mat-icon class="icon">add</mat-icon>
+</button>
