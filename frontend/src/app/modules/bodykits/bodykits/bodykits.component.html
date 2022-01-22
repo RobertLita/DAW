@@ -1,3 +1,21 @@
-<div>
-    <button mat-raised-button routerLink="/bodykits/newbodykit">Adauga un nou bodykit la vanzare</button>
+<div class="container" *ngFor="let bodykit of bodykits">
+
+    <a class="bodykit" (click)="goToBodykit(bodykit.bodykitID)">
+        <div class="stanga">
+            <h2 class="titlu">{{bodykit.brand}}</h2>
+            <p>Masina: {{bodykit.carBrand + bodykit.carModel}}</p>
+        </div>
+        <div class="centru">
+            
+            <img src="./assets/cars.jpg" />
+            
+        </div>
+        <div class="dreapta">
+            <h2>{{bodykit.price + ' €'}} </h2>
+            <p>Tip: {{bodykit.type}}</p>
+        </div>
+    </a>
 </div>
+<button mat-fab color="accent" aria-label="Adauga un bodykit" class="newcar" routerLink="/bodykits/newbodykit">
+        <mat-icon class="icon">add</mat-icon>
+</button>

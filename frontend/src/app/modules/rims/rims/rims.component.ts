@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RimsService } from 'src/app/services/rims.service';
 
 @Component({
   selector: 'app-rims',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RimsComponent implements OnInit {
 
-  constructor() { }
+  public rims : Array<{rimID: number, size: number, brand: string, type: string, price: number, et: number, j:number ,
+     hubSize: string}> = [];
+
+  constructor(
+    private rimsService: RimsService,
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
+    this.rimsService.getRims().subscribe(
+      (result) => {
+        this.rims = result;
+        console.log(result);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
+  public goToRim(id: any): void{
+    this.router.navigate(['/rim', id]);
   }
 
 }
