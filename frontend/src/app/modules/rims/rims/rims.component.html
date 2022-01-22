@@ -1,3 +1,23 @@
-<div>
-    <button mat-raised-button routerLink="/rims/newrim">Adauga un nou set de jante la vanzare</button>
+<div class="container" *ngFor="let rim of rims">
+
+    <a class="janta" (click)="goToRim(rim.rimID)">
+        <div class="stanga">
+            <h2 class="titlu">{{rim.brand}}</h2>
+            <p>Dimensiune: R{{rim.size}}</p>
+            <p>Tip: {{rim.type}}</p>
+        </div>
+        <div class="centru">
+            
+            <img src="./assets/cars.jpg" />
+            
+        </div>
+        <div class="dreapta">
+            <h2>{{rim.price + ' €'}} </h2>
+            <p>ET: {{rim.et}}</p>
+            <p>J: {{rim.j}}</p>
+        </div>
+    </a>
 </div>
+<button mat-fab color="accent" aria-label="Adauga un set de jante" class="newrim" routerLink="/rims/newrim">
+        <mat-icon class="icon">add</mat-icon>
+</button>

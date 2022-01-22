@@ -7,6 +7,8 @@ import { NewRimComponent} from './newrim/newrim.component';
 import { ReactiveFormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { SlideshowModule } from 'ng-simple-slideshow';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { MatInputModule } from '@angular/material/input';
     RimsRoutingModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule,
+    SlideshowModule,
   ]
 })
 export class RimsModule { }
