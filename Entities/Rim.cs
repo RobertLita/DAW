@@ -13,11 +13,11 @@ namespace proiect_daw.Entities
         [Required(ErrorMessage = "Dimensiunea este obligatorie!")]
         public ushort Size { get; set; }
         public string Brand { get; set; }
-        public int Type { get; set; }
+        public string Type { get; set; }
         public int Price { get; set; }
-        public int ET { get; set; }
-        public int J { get; set; }
-        public int HubSize { get; set; }
+        public float ET { get; set; }
+        public float J { get; set; }
+        public float HubSize { get; set; }
         public virtual ICollection<CarRim> CarRims { get; set; }
     }
 }

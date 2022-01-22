@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using proiect_daw.Entities;
 
 namespace proiect_daw.Migrations
 {
     [DbContext(typeof(AppContext))]
-    partial class AppContextModelSnapshot : ModelSnapshot
+    [Migration("20220122123734_v5")]
+    partial class v5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,7 +33,7 @@ namespace proiect_daw.Migrations
                     b.Property<string>("CarBrand")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CarID")
+                    b.Property<int?>("CarID")
                         .HasColumnType("int");
 
                     b.Property<string>("CarModel")
@@ -185,14 +187,14 @@ namespace proiect_daw.Migrations
                     b.Property<string>("Brand")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("ET")
-                        .HasColumnType("real");
+                    b.Property<int>("ET")
+                        .HasColumnType("int");
 
-                    b.Property<float>("HubSize")
-                        .HasColumnType("real");
+                    b.Property<int>("HubSize")
+                        .HasColumnType("int");
 
-                    b.Property<float>("J")
-                        .HasColumnType("real");
+                    b.Property<int>("J")
+                        .HasColumnType("int");
 
                     b.Property<int>("Price")
                         .HasColumnType("int");
@@ -200,8 +202,8 @@ namespace proiect_daw.Migrations
                     b.Property<int>("Size")
                         .HasColumnType("int");
 
-                    b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
 
                     b.HasKey("RimID");
 
@@ -212,9 +214,7 @@ namespace proiect_daw.Migrations
                 {
                     b.HasOne("proiect_daw.Entities.Car", "Car")
                         .WithMany("Bodykits")
-                        .HasForeignKey("CarID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CarID");
 
                     b.Navigation("Car");
                 });
