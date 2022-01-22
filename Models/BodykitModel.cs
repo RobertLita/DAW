@@ -18,7 +18,7 @@ namespace proiect_daw.Models
         //[Required(ErrorMessage = "Modelul masinii pentru care este bodykit-ul este obligatoriu!")]
         public string CarModel { get; set; }
         //[Required(ErrorMessage = "Prețul bodykit-ului este obligatoriu!")]
-        public string Type { get; set; }
+        //public string Type { get; set; }
         public int CarID { get; set; }
         public int Price { get; set; }
     }

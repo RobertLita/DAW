@@ -41,7 +41,7 @@ const routes: Routes = [
     loadChildren: () => import('src/app/modules/bodykits/bodykits.module').then(m => m.BodykitsModule),
   },
   {
-    path: ':id',
+    path: 'car',
     loadChildren: () => import('src/app/modules/cars/cars.module').then(m => m.CarsModule),
   }
 ];

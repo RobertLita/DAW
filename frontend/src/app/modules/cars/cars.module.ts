@@ -9,12 +9,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { CarComponent } from './car/car.component';
 import { SlideshowModule } from 'ng-simple-slideshow';
+import { MarksPipe } from 'src/app/marks.pipe';
+
 
 @NgModule({
   declarations: [
     CarsComponent,
     NewCarComponent,
-    CarComponent
+    CarComponent,
+    MarksPipe,
   ],
   imports: [
     CommonModule,
@@ -24,6 +27,9 @@ import { SlideshowModule } from 'ng-simple-slideshow';
     MatInputModule,
     MatIconModule,
     SlideshowModule,
+  ],
+  exports: [
+    MarksPipe
   ]
 })
 export class CarsModule { }

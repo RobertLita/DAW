@@ -33,4 +33,6 @@ export class CarsComponent implements OnInit {
     this.router.navigate(['/car', id]);
   }
 
+  
+
 }

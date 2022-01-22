@@ -7,11 +7,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
-import { SlideshowModule } from 'ng-simple-slideshow';
+import { HoverPozaDirective } from './hover-poza.directive';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    HoverPozaDirective,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,6 @@ import { SlideshowModule } from 'ng-simple-slideshow';
     MatIconModule,
     MatFormFieldModule,
     HttpClientModule,
-    SlideshowModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,7 @@
     <a class="bodykit" (click)="goToBodykit(bodykit.bodykitID)">
         <div class="stanga">
             <h2 class="titlu">{{bodykit.brand}}</h2>
-            <p>Masina: {{bodykit.carBrand + bodykit.carModel}}</p>
+            <p>Masina: {{bodykit.carBrand + ' ' + bodykit.carModel}}</p>
         </div>
         <div class="centru">
             
@@ -12,7 +12,6 @@
         </div>
         <div class="dreapta">
             <h2>{{bodykit.price + ' €'}} </h2>
-            <p>Tip: {{bodykit.type}}</p>
         </div>
     </a>
 </div>

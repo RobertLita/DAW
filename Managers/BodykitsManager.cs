@@ -64,7 +64,7 @@ namespace proiect_daw.Managers
                 Brand = model.Brand,
                 CarBrand = model.CarBrand,
                 CarModel = model.CarModel,
-                Type = model.Type,
+                //Type = model.Type,
                 Price = model.Price,
                 CarID = model.CarID,
             };
@@ -79,7 +79,7 @@ namespace proiect_daw.Managers
             bodykit.CarBrand = model.CarBrand;
             bodykit.CarModel = model.CarModel;
             bodykit.Price = model.Price;
-            bodykit.Type = model.Type;
+            //bodykit.Type = model.Type;
             bodykit.CarID = model.CarID;
             bodykitsRepository.Update(bodykit);
         }

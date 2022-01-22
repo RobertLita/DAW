@@ -1,14 +1,40 @@
 <div class="container">
     <div class="masina">
-        <!-- <slideshow [imageUrls]="images" [minHeight]="'525px'"
-        [autoPlay]="true"
-        [showArrows]="true"></slideshow> -->
-        <div class="titlu">
-            <p>Titlu</p>
-            <p>Pret</p>
+        <div class="imagini">
+            <img src='./assets/cars.jpg' class="imagine"/>
+            <img src='./assets/cars.jpg' class="imagine"/>
+            <img src='./assets/cars.jpg' class="imagine"/>
+            <img src='./assets/cars.jpg' class="imagine"/>
+            <img src='./assets/cars.jpg' class="imagine"/>
+            <img src='./assets/cars.jpg' class="imagine"/>
         </div>
-        <div class="informatii">
-            <p> info</p>
+        <hr>
+        <div class="info">
+            
+            <h2 class="titlu">{{car.brand + ' ' + car.model}}</h2>
+            <h2>{{car.price + ' €'}}</h2>
+        </div>
+        
+        <div class="detalii">
+            <div class="specificatii">
+            <ul>
+                <li>{{'An' | marks}}{{car.year}}</li>
+                <li>{{'Kilometraj' | marks}}{{car.mileage}}</li>
+                <li>{{'Culoare' | marks}}{{car.color}}</li>
+                <li>{{'Combustibil' | marks}}{{car.fuel}}</li>
+                <li>{{'Cai putere' | marks}}{{car.hp}}</li>
+                <li *ngIf="car.cubic_Capacity > 0">{{'Capacitate cilindrica' | marks}}{{car.cubic_Capacity}}</li>
+                <li *ngIf="car.battery_Capacity > 0">{{'Capacitate baterie' | marks}}{{car.battery_Capacity}}</li>
+                <li>{{'Transmisie' | marks}}{{car.transmission}}</li>
+                <li>{{'VIN' | marks}}{{car.vin}}</li>
+                <li>{{'Tip caroserie' | marks}}{{car.type}}</li>
+            </ul>
+            </div>
+            <div class="btn">
+            <button mat-raised-button>Vezi istoricul masinii</button>
+            <button mat-raised-button>Vezi jantele</button>
+            <button mat-raised-button>Vezi bodykit-urile</button>
+            </div>
         </div>
     </div>
 </div>
