@@ -15,4 +15,8 @@ export class BodykitsService {
   public getBodykits(): Observable<any>{
     return this.http.get(`${this.url}`);
   }
+
+  public getBodykitById(id: any): Observable<any> {
+    return this.http.get(`${this.url}/byId/${id}`);
+  }
 }

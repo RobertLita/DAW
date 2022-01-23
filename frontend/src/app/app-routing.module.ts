@@ -43,6 +43,14 @@ const routes: Routes = [
   {
     path: 'car',
     loadChildren: () => import('src/app/modules/cars/cars.module').then(m => m.CarsModule),
+  },
+  {
+    path: 'rim',
+    loadChildren: () => import('src/app/modules/rims/rims.module').then(m => m.RimsModule),
+  },
+  {
+    path: 'bodykit',
+    loadChildren: () => import('src/app/modules/bodykits/bodykits.module').then(m => m.BodykitsModule),
   }
 ];
 
