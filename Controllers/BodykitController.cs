@@ -80,8 +80,8 @@ namespace proiect_daw.Controllers
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
             manager.Delete(id);
-
-            return Ok();
+            var bodykits = manager.GetBodykits();
+            return Ok(bodykits);
         }
     }
 }
