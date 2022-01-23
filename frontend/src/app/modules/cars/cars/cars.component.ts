@@ -33,6 +33,17 @@ export class CarsComponent implements OnInit {
     this.router.navigate(['/car', id]);
   }
 
-  
+  public deleteCar(car : any): void{
+    console.log(car);
+    this.carsService.deleteCar(car).subscribe(
+      (result) =>{
+        console.log(result);
+        this.cars = result;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
 
 }

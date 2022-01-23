@@ -9,14 +9,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { SlideshowModule } from 'ng-simple-slideshow';
 import { RimComponent } from './rim/rim.component';
-import { MarksPipe } from 'src/app/marks.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
     RimsComponent,
     NewRimComponent,
     RimComponent,
-    MarksPipe,
+    
   ],
   imports: [
     CommonModule,
@@ -26,9 +26,7 @@ import { MarksPipe } from 'src/app/marks.pipe';
     MatInputModule,
     MatIconModule,
     SlideshowModule,
-  ],
-  exports: [
-    MarksPipe
+    SharedModule,
   ]
 })
 export class RimsModule { }

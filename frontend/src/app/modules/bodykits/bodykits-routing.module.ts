@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BodykitComponent } from './bodykit/bodykit.component';
 import { BodykitsComponent } from './bodykits/bodykits.component';
 import { NewBodyKitComponent } from './newbodykit/newbodykit.component';
 
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'newbodykit',
     component: NewBodyKitComponent
+  },
+  {
+    path: ':id',
+    component: BodykitComponent
   }
 ];
 

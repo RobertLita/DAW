@@ -9,7 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { CarComponent } from './car/car.component';
 import { SlideshowModule } from 'ng-simple-slideshow';
-import { MarksPipe } from 'src/app/marks.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -17,7 +17,6 @@ import { MarksPipe } from 'src/app/marks.pipe';
     CarsComponent,
     NewCarComponent,
     CarComponent,
-    MarksPipe,
   ],
   imports: [
     CommonModule,
@@ -27,9 +26,8 @@ import { MarksPipe } from 'src/app/marks.pipe';
     MatInputModule,
     MatIconModule,
     SlideshowModule,
+    SharedModule,
   ],
-  exports: [
-    MarksPipe
-  ]
+
 })
 export class CarsModule { }

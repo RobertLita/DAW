@@ -9,15 +9,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { SlideshowModule } from 'ng-simple-slideshow';
 import { BodykitComponent } from './bodykit/bodykit.component';
-import { MarksPipe } from 'src/app/marks.pipe';
-
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
     BodykitsComponent,
     NewBodyKitComponent,
     BodykitComponent,
-    MarksPipe
   ],
   imports: [
     CommonModule,
@@ -27,9 +25,7 @@ import { MarksPipe } from 'src/app/marks.pipe';
     MatInputModule,
     MatIconModule,
     SlideshowModule,
+    SharedModule,
   ],
-  exports: [
-    MarksPipe
-  ]
 })
 export class BodykitsModule { }

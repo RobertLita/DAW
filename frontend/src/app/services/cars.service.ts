@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -18,5 +18,12 @@ export class CarsService {
 
   public getCarById(id: any): Observable<any> {
     return this.http.get(`${this.url}/byId/${id}`);
+  }
+  public deleteCar(car: any): Observable<any>{
+    const options = {
+      headers: new HttpHeaders(),
+      body: car
+    };
+    return this.http.delete(`${this.url}/${car.carID}`);
   }
 }

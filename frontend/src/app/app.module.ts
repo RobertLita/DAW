@@ -23,6 +23,7 @@ import { HoverPozaDirective } from './hover-poza.directive';
     MatIconModule,
     MatFormFieldModule,
     HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

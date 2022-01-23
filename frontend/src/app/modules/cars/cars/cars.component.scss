@@ -5,6 +5,7 @@ div.container{
     align-items: center;
 }
 a.masina{
+    position: relative;
     margin-top: 50px;
     width: 75%;
     height: 200px;
@@ -53,4 +54,14 @@ div.stanga, div.dreapta, div.centru{
     position: fixed;
     bottom: 20px;
     right: 20px;
+}
+.delete{
+    color: #9b3ce9;
+    position: absolute;
+    right: 15%;
+    margin-top: 10px;
+    transition: transform 0.5s;
+    &:hover{
+        transform: scale(1.3);
+    }
 }

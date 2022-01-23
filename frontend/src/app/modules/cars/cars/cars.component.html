@@ -20,6 +20,7 @@
             <p>Transmisie: {{car.transmission}}</p>
         </div>
     </a>
+    <mat-icon class="delete" (click) ="deleteCar(car)">delete</mat-icon>
 </div>
 <button mat-fab color="accent" aria-label="Adauga o masina" class="newcar" routerLink="/cars/newcar">
         <mat-icon class="icon">add</mat-icon>
