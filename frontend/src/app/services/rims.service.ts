@@ -15,4 +15,8 @@ export class RimsService {
   public getRims(): Observable<any>{
     return this.http.get(`${this.url}`);
   }
+
+  public getRimById(id: any): Observable<any> {
+    return this.http.get(`${this.url}/byId/${id}`);
+  }
 }

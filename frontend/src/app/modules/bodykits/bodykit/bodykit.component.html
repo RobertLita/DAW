@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="masina">
+        <div class="imagini">
+            <img src='./assets/cars.jpg' class="imagine"/>
+            <img src='./assets/cars.jpg' class="imagine"/>
+            <img src='./assets/cars.jpg' class="imagine"/>
+            <img src='./assets/cars.jpg' class="imagine"/>
+            <img src='./assets/cars.jpg' class="imagine"/>
+            <img src='./assets/cars.jpg' class="imagine"/>
+        </div>
+        <hr>
+        <div class="info">
+            
+            <h2 class="titlu">{{'Kit ' + bodykit.brand}}</h2>
+            <h2>{{bodykit.price + ' €'}}</h2>
+        </div>
+        
+        <div class="detalii">
+            <div class="specificatii">
+            <ul>
+                <li>{{'Brand masina' | marks}}{{bodykit.carBrand}}</li>
+                <li>{{'Model masina' | marks}}{{bodykit.carModel}}</li>
+                <li>{{'ID Masian' | marks}}{{bodykit.carID}}</li>
+            
+            </ul>
+            </div>
+            <!-- <div class="btn">
+            <button mat-raised-button>Vezi istoricul masinii</button>
+            <button mat-raised-button>Vezi jantele</button>
+            <button mat-raised-button>Vezi bodykit-urile</button>
+            </div> -->
+        </div>
+    </div>
+</div>

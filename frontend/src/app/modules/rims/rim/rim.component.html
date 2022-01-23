@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="masina">
+        <div class="imagini">
+            <img src='./assets/cars.jpg' class="imagine"/>
+            <img src='./assets/cars.jpg' class="imagine"/>
+            <img src='./assets/cars.jpg' class="imagine"/>
+            <img src='./assets/cars.jpg' class="imagine"/>
+            <img src='./assets/cars.jpg' class="imagine"/>
+            <img src='./assets/cars.jpg' class="imagine"/>
+        </div>
+        <hr>
+        <div class="info">
+            
+            <h2 class="titlu">{{'Jante ' + rim.brand}}</h2>
+            <h2>{{rim.price + ' €'}}</h2>
+        </div>
+        
+        <div class="detalii">
+            <div class="specificatii">
+            <ul>
+                <li>{{'Dimensiune' | marks}}{{rim.size}}</li>
+                <li>{{'Tip' | marks}}{{rim.type}}</li>
+                <li>{{'ET' | marks}}{{rim.et}}</li>
+                <li>{{'J' | marks}}{{rim.j}}</li>
+                <li>{{'Dimensiune butuc' | marks}}{{rim.hubSize}}</li>
+            </ul>
+            </div>
+            <!-- <div class="btn">
+            <button mat-raised-button>Vezi istoricul masinii</button>
+            <button mat-raised-button>Vezi jantele</button>
+            <button mat-raised-button>Vezi bodykit-urile</button>
+            </div> -->
+        </div>
+    </div>
+</div>
