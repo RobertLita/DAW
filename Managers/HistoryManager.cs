@@ -44,7 +44,7 @@ namespace proiect_daw.Managers
         {
             var newHistory = new History
             {
-                HistoryID = model.HistoryID,
+                //HistoryID = model.HistoryID,
                 CarHistory = model.CarHistory,
                 CarID = model.CarID
             };

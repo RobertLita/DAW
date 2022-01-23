@@ -22,9 +22,17 @@ namespace proiect_daw.Repositories
         }
         public void Create(Car car)
         {
-            db.Cars.Add(car);
-
+            
+            var c = db.Cars.Add(car);
             db.SaveChanges();
+            var h = new History
+            {
+                CarHistory = "https://www.carvertical.com/ro/verificare-prealabila?packages=32!1&vin=" + car.VIN,
+                CarID = c.Entity.CarID
+            };
+            db.Histories.Add(h);
+            db.SaveChanges();
+            
         }
 
         public void Update(Car car)

@@ -8,7 +8,7 @@ namespace proiect_daw.Entities
 {
     public class History
     {
-        [Key]
+        //[Key]
         public int HistoryID { get; set; }
         public string CarHistory { get; set; }
         public int CarID { get; set; }

@@ -19,6 +19,11 @@ export class CarsService {
   public getCarById(id: any): Observable<any> {
     return this.http.get(`${this.url}/byId/${id}`);
   }
+
+  public addCar(car: any): Observable<any> {
+    return this.http.post(`${this.url}/withobj`, car);
+  }
+
   public deleteCar(car: any): Observable<any>{
     const options = {
       headers: new HttpHeaders(),

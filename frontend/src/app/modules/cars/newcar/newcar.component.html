@@ -3,10 +3,10 @@
         <h2>Adaugati o masina de vanzare:</h2>
         <div class="form-sections">
             <form [formGroup]="newcarForm" class="form">
-                <mat-form-field apperance="outline">
-                    <mat-label>Username</mat-label>
-                    <input matInput placeholder="Username" formControlName="username"/>
-                </mat-form-field>
+                <!-- <mat-form-field apperance="outline">
+                    <mat-label>ID</mat-label>
+                    <input matInput placeholder="CarID" formControlName="carID"/>
+                </mat-form-field> -->
     
                 <mat-form-field apperance="outline">
                     <mat-label>Brand</mat-label>
@@ -49,6 +49,11 @@
                 </mat-form-field>
 
                 <mat-form-field apperance="outline">
+                    <mat-label>Cai putere</mat-label>
+                    <input matInput placeholder="HP" formControlName="HP"/>
+                </mat-form-field>
+
+                <mat-form-field apperance="outline">
                     <mat-label>Capacitate cilindrica</mat-label>
                     <input matInput placeholder="Cubic_Capacity" formControlName="cubic_capacity"/>
                 </mat-form-field>
@@ -60,7 +65,7 @@
 
                 <mat-form-field apperance="outline">
                     <mat-label>Transmisie</mat-label>
-                    <input matInput placeholder="Trasmission" formControlName="trasmission"/>
+                    <input matInput placeholder="Trasmission" formControlName="transmission"/>
                 </mat-form-field>
 
                 <mat-form-field apperance="outline">

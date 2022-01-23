@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
+import { CarsService } from 'src/app/services/cars.service';
 
 @Component({
   selector: 'app-newcar',
@@ -11,7 +12,7 @@ export class NewCarComponent implements OnInit {
 
   public newcarForm: FormGroup = new FormGroup(
     {
-      username: new FormControl(''),
+      //carID: new FormControl(0),
       brand: new FormControl(''),
       model: new FormControl(''),
       price: new FormControl(0),
@@ -25,18 +26,20 @@ export class NewCarComponent implements OnInit {
       battery_capacity: new FormControl(0),
       transmission: new FormControl(''),
       type: new FormControl(''),
+
     }
   );
   constructor(
     private router: Router,
+    private carsService: CarsService
   ) { }
 
   ngOnInit(): void {
   }
   //getters
-  get username(): AbstractControl | null{
-    return this.newcarForm.get('username');
-  }
+  // get carID(): AbstractControl | null{
+  //   return this.newcarForm.get('carID');
+  // }
 
   get brand(): AbstractControl | null{
     return this.newcarForm.get('brand');
@@ -62,7 +65,7 @@ export class NewCarComponent implements OnInit {
   }
 
   get color(): AbstractControl | null{
-    return this.newcarForm.get(' color');
+    return this.newcarForm.get('color');
   }
 
   get fuel(): AbstractControl | null{
@@ -73,24 +76,32 @@ export class NewCarComponent implements OnInit {
     return this.newcarForm.get('HP');
   }
   get cubic_capacity(): AbstractControl | null{
-    return this.newcarForm.get('VIN');
+    return this.newcarForm.get('cubic_capacity');
   }
 
   get battery_capacity(): AbstractControl | null{
-    return this.newcarForm.get('mileage');
+    return this.newcarForm.get('battery_capacity');
   }
 
   get transmission(): AbstractControl | null{
-    return this.newcarForm.get(' color');
+    return this.newcarForm.get('transmission');
   }
 
   get type(): AbstractControl | null{
-    return this.newcarForm.get('fuel');
+    return this.newcarForm.get('type');
   }
 
 
-  public newcar(): void{
-    //localStorage.setItem('Role', 'Admin');
-    this.router.navigate(['/cars']);
+  public addCar(): void{
+    console.log(this.newcarForm.value);
+    this.carsService.addCar(this.newcarForm.value).subscribe(
+      (result) => {
+        console.log(result);
+        this.router.navigate(['/cars']);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

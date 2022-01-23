@@ -60,7 +60,7 @@ namespace proiect_daw.Managers
         {
             var newCar = new Car
             {
-                CarID = model.CarID,
+                //CarID = model.CarID,
                 Brand = model.Brand,
                 Model = model.Model,
                 Price = model.Price,
@@ -74,16 +74,16 @@ namespace proiect_daw.Managers
                 Transmission = model.Transmission,
                 VIN = model.VIN,
                 Type = model.Type,
-                OwnerID = model.OwnerID,
-                //HistoryID = model.HistoryID,
-                CarRims = model.CarRims
+                OwnerID = 1,
+                HistoryID = 9,
+                BodykitID = 1
+                //CarRims = model.CarRims
             };
-
             carsRepository.Create(newCar);
         }
         public void Update(CarModel model)
         {
-            var car = GetCarById(model.CarID);
+            var car = GetCarById(4);
 
             car.Brand = model.Brand;
             car.Model = model.Model;
@@ -98,11 +98,11 @@ namespace proiect_daw.Managers
             car.Transmission = model.Transmission;
             car.VIN = model.VIN;
             car.Type = model.Type;
-            car.OwnerID = model.OwnerID;
-            car.HistoryID = model.HistoryID;
-            car.CarRims = model.CarRims;
-            car.Owner = model.Owner;
-            car.History = model.History;
+            //car.OwnerID = model.OwnerID;
+           // car.HistoryID = model.HistoryID;
+            //car.CarRims = model.CarRims;
+            //car.Owner = model.Owner;
+            //car.History = model.History;
             carsRepository.Update(car);
         }
     }
