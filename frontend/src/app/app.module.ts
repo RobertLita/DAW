@@ -8,12 +8,14 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { HoverPozaDirective } from './hover-poza.directive';
+import { HoverBtnDirective } from './hover-btn.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HoverPozaDirective,
+    HoverBtnDirective,
   ],
   imports: [
     BrowserModule,
