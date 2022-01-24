@@ -1,3 +1,6 @@
+using proiect_daw.Entities;
+using proiect_daw.Managers;
+using proiect_daw.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -14,9 +17,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using proiect_daw.Entities;
-using proiect_daw.Managers;
-using proiect_daw.Repositories;
 
 namespace proiect_daw
 {
@@ -52,7 +52,6 @@ namespace proiect_daw
             });
 
             services.AddDbContext<Entities.AppContext>(options => options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Initial Catalog=proiect_daw;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
-
             services.AddTransient<ICarsRepository, CarsRepository>();
             services.AddTransient<ICarsManager, CarsManager>();
             services.AddTransient<IRimsRepository, RimsRepository>();
@@ -61,6 +60,15 @@ namespace proiect_daw
             services.AddTransient<IOwnersManager, OwnersManager>();
             services.AddTransient<IBodykitsRepository, BodykitsRepository>();
             services.AddTransient<IBodykitsManager, BodykitsManager>();
+            services.AddTransient<IHistoryRepository, HistoryRepository>();
+            services.AddTransient<IHistoryManager, HistoryManager>();
+
+            services.AddAuthorization(opt =>
+            {
+                opt.AddPolicy("BasicUser", policy => policy.RequireRole("BasicUser").RequireAuthenticatedUser().AddAuthenticationSchemes("AuthScheme").Build());
+                opt.AddPolicy("Admin", policy => policy.RequireRole("Admin").RequireAuthenticatedUser().AddAuthenticationSchemes("AuthScheme").Build());
+
+            });
         }
 
 

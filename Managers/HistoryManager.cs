@@ -22,7 +22,7 @@ namespace proiect_daw.Managers
         public History GetHistoryById(int id)
         {
             var history = historyRepository.GetHistoryIQueryable()
-                .FirstOrDefault(x => x.HistoryID == id);
+                .FirstOrDefault(x => x.CarID == id);
 
             return history;
         }

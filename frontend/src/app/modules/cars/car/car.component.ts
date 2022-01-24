@@ -1,9 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CarsService } from 'src/app/services/cars.service';
 import { EditCarComponent } from '../../shared/edit-car/edit-car.component';
+import { HistoriesService } from 'src/app/services/histories.service';
 
 @Component({
   selector: 'app-car',
@@ -12,10 +13,11 @@ import { EditCarComponent } from '../../shared/edit-car/edit-car.component';
 })
 export class CarComponent implements OnInit {
 
+  public history_url: string | undefined;
   public subscription: Subscription | undefined;
   public id: number | undefined;
   public car = {
-    id: 0,
+    carID: 0,
     brand: 'default brand',
     model: 'default model',
     price: 0,
@@ -34,9 +36,12 @@ export class CarComponent implements OnInit {
     bodykitID: 0,
   }
   constructor(
+
+    private router: Router,
     private route: ActivatedRoute,
     private carService: CarsService,
     public dialog: MatDialog,
+    private historyService: HistoriesService,
   ) { }
 
   ngOnInit(): void {
@@ -75,5 +80,17 @@ export class CarComponent implements OnInit {
         console.log(result);
       }
     );
+  }
+
+  public getHistory(id: any): void{
+    this.historyService.getHistory(id).subscribe(
+      (result) => {
+        console.log(result);
+        window.location.href = result.carHistory;
+      },
+      (error) => {
+        console.error(error);
+      }
+    )
   }
 }

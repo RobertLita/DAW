@@ -32,7 +32,7 @@
             </div>
             <div class="btn">
             <button mat-raised-button (click)="openModal(car)">Editeaza masina</button>
-            <button mat-raised-button>Vezi istoricul masinii</button>
+            <button mat-raised-button (click)="getHistory(car.carID)">Vezi istoricul masinii</button>
             <button mat-raised-button>Vezi jantele</button>
             <button mat-raised-button>Vezi bodykit-urile</button>
             </div>
