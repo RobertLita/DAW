@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CarsService } from 'src/app/services/cars.service';
+import { EditCarComponent } from '../../shared/edit-car/edit-car.component';
 
 @Component({
   selector: 'app-car',
@@ -34,6 +36,7 @@ export class CarComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private carService: CarsService,
+    public dialog: MatDialog,
   ) { }
 
   ngOnInit(): void {
@@ -44,6 +47,25 @@ export class CarComponent implements OnInit {
         this.getCar();
       }
     });
+  }
+
+  public openModal(car: any): void {
+    const data = {
+      car
+    };
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '550px';
+    dialogConfig.data = data;
+    const dialogRef = this.dialog.open(EditCarComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(
+      (result) => {
+      console.log(result);
+      window.location.reload();
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 
   public getCar(): void{

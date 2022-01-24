@@ -69,10 +69,10 @@ namespace proiect_daw.Controllers
 
             return Ok();
         }
-        [HttpPut]
-        public async Task<IActionResult> Update([FromBody] CarModel carModel)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update([FromBody] CarModel carModel, [FromRoute] int id)
         {
-            manager.Update(carModel);
+            manager.Update(carModel, id);
 
             return Ok();
         }

@@ -14,7 +14,8 @@
             <h2>{{bodykit.price + ' €'}} </h2>
         </div>
     </a>
+    <mat-icon class="delete" (click) ="deleteBK(bodykit)">delete</mat-icon>
 </div>
-<button mat-fab color="accent" aria-label="Adauga un bodykit" class="newcar" routerLink="/bodykits/newbodykit">
+<button mat-fab color="accent" aria-label="Adauga un bodykit" class="newcar mov" routerLink="/bodykits/newbodykit">
         <mat-icon class="icon">add</mat-icon>
 </button>

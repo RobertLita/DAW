@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -18,5 +18,21 @@ export class RimsService {
 
   public getRimById(id: any): Observable<any> {
     return this.http.get(`${this.url}/byId/${id}`);
+  }
+
+  public addRim(rim: any): Observable<any> {
+    return this.http.post(`${this.url}/withobj`, rim);
+  }
+
+  public editRim(rim: any): Observable<any> {
+    return this.http.put(`${this.url}/${rim.rimID}`, rim);
+  }
+
+  public deleteRim(rim: any): Observable<any>{
+    const options = {
+      headers: new HttpHeaders(),
+      body: rim
+    };
+    return this.http.delete(`${this.url}/${rim.rimID}`);
   }
 }

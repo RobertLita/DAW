@@ -10,7 +10,7 @@ export class HoverBtnDirective {
   ) { }
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.highlight('white');
+    this.highlight('#9b3ce9');
   }
 
   @HostListener('mouseleave') onMouseLeave() {
@@ -18,6 +18,6 @@ export class HoverBtnDirective {
   }
 
   private highlight(color: string) {
-    this.el.nativeElement.style.backgroudColor = color;
+    this.el.nativeElement.style.backgroundColor = color;
   }
 }

@@ -81,9 +81,9 @@ namespace proiect_daw.Managers
             };
             carsRepository.Create(newCar);
         }
-        public void Update(CarModel model)
+        public void Update(CarModel model, int id)
         {
-            var car = GetCarById(4);
+            var car = GetCarById(id);
 
             car.Brand = model.Brand;
             car.Model = model.Model;

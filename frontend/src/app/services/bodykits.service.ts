@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -18,5 +18,21 @@ export class BodykitsService {
 
   public getBodykitById(id: any): Observable<any> {
     return this.http.get(`${this.url}/byId/${id}`);
+  }
+
+  public addBK(bodykit: any): Observable<any> {
+    return this.http.post(`${this.url}/withobj`, bodykit);
+  }
+
+  public editBK(bodykit: any): Observable<any> {
+    return this.http.put(`${this.url}/${bodykit.bodykitID}`, bodykit);
+  }
+
+  public deleteBK(bodykit: any): Observable<any>{
+    const options = {
+      headers: new HttpHeaders(),
+      body: bodykit
+    };
+    return this.http.delete(`${this.url}/${bodykit.bodykitID}`);
   }
 }

@@ -3,14 +3,15 @@
         <h2>Adaugati un set de jante pentru vanzare:</h2>
         <div class="form-sections">
             <form [formGroup]="newrimForm" class="form">
-                <mat-form-field apperance="outline">
-                    <mat-label>Username</mat-label>
-                    <input matInput placeholder="Username" formControlName="username"/>
-                </mat-form-field>
     
                 <mat-form-field apperance="outline">
                     <mat-label>Dimensiune</mat-label>
                     <input matInput placeholder="Size" formControlName="size"/>
+                </mat-form-field>
+
+                <mat-form-field apperance="outline">
+                    <mat-label>Brand</mat-label>
+                    <input matInput placeholder="Brand" formControlName="brand"/>
                 </mat-form-field>
 
                 <mat-form-field apperance="outline">
@@ -35,7 +36,7 @@
 
                 <mat-form-field apperance="outline">
                     <mat-label>Dimensiune butuc</mat-label>
-                    <input matInput placeholder="Hub_Size" formControlName="hub_size"/>
+                    <input matInput placeholder="HubSize" formControlName="hubSize"/>
                 </mat-form-field>
             </form>
         </div>
@@ -44,6 +45,6 @@
                 Message
             </p>
         </div> -->
-        <button mat-raised-button (click)="newrim()" appHoverBtn>Adauga setul de jante</button>
+        <button mat-raised-button (click)="addRim()" appHoverBtn>Adauga setul de jante</button>
     </div>
     </section>

@@ -33,7 +33,18 @@ export class BodykitsComponent implements OnInit {
     this.router.navigate(['/bodykit', id]);
   }
   
-
+  public deleteBK(bodykit : any): void{
+    console.log(bodykit);
+    this.bodykitsService.deleteBK(bodykit).subscribe(
+      (result) =>{
+        console.log(result);
+        this.bodykits = result;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
 }
 
 

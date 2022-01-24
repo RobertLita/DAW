@@ -13,7 +13,7 @@ namespace proiect_daw.Managers
         List<Car> GetCars();
         Car GetCarById(int id);
         void Create(CarModel model);
-        void Update(CarModel model);
+        void Update(CarModel model, int id);
         void Delete(int id);
         List<int> GetCarsIdsList();
         List<Car> GetCarsFiltered(string brand);

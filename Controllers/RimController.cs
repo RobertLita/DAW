@@ -69,10 +69,10 @@ namespace proiect_daw.Controllers
 
             return Ok();
         }
-        [HttpPut]
-        public async Task<IActionResult> Update([FromBody] RimModel rimModel)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update([FromBody] RimModel rimModel, [FromRoute] int id)
         {
-            manager.Update(rimModel);
+            manager.Update(rimModel, id);
 
             return Ok();
         }

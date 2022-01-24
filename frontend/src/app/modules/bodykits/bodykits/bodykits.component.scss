@@ -59,3 +59,13 @@ div.stanga, div.dreapta, div.centru{
     bottom: 20px;
     right: 20px;
 }
+.delete{
+    color: #9b3ce9;
+    position: absolute;
+    right: 15%;
+    margin-top: 10px;
+    transition: transform 0.5s;
+    &:hover{
+        transform: scale(1.3);
+    }
+}

@@ -7,15 +7,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
-import { HoverPozaDirective } from './hover-poza.directive';
-import { HoverBtnDirective } from './hover-btn.directive';
+import { MatDialogModule} from '@angular/material/dialog'
+import { SharedModule } from './modules/shared/shared.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HoverPozaDirective,
-    HoverBtnDirective,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +23,8 @@ import { HoverBtnDirective } from './hover-btn.directive';
     MatIconModule,
     MatFormFieldModule,
     HttpClientModule,
-
+    MatDialogModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

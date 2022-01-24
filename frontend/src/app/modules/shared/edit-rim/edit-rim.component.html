@@ -1,0 +1,54 @@
+<div class="container">
+    <h2>Editeaza setul de jante:</h2>
+    <div class="form-sections">
+        <form [formGroup]="newrimForm" class="form">
+
+            <mat-form-field apperance="outline">
+                <mat-label>RimID</mat-label>
+                <input matInput placeholder="RimID" formControlName="rimID"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Dimensiune</mat-label>
+                <input matInput placeholder="Size" formControlName="size"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Brand</mat-label>
+                <input matInput placeholder="Brand" formControlName="brand"/>
+            </mat-form-field>
+
+
+            <mat-form-field apperance="outline">
+                <mat-label>Tip</mat-label>
+                <input matInput placeholder="Type" formControlName="type"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Pret</mat-label>
+                <input matInput placeholder="Price" formControlName="price"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>ET</mat-label>
+                <input matInput placeholder="ET" formControlName="et"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>J</mat-label>
+                <input matInput placeholder="J" formControlName="j"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Dimensiune butuc</mat-label>
+                <input matInput placeholder="HubSize" formControlName="hubSize"/>
+            </mat-form-field>
+        </form>
+    </div>
+    <!-- <div class="message-section">
+        <p>
+            Message
+        </p>
+    </div> -->
+    <button mat-raised-button (click)="editRim()" appHoverBtn>Actualizeaza setul de jante</button>
+</div>

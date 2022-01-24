@@ -3,10 +3,7 @@
         <h2>Adaugati un bodykit pentru vanzare:</h2>
         <div class="form-sections">
             <form [formGroup]="newbodykitForm" class="form">
-                <mat-form-field apperance="outline">
-                    <mat-label>Username</mat-label>
-                    <input matInput placeholder="Username" formControlName="username"/>
-                </mat-form-field>
+                
     
                 <mat-form-field apperance="outline">
                     <mat-label>Brand</mat-label>
@@ -14,18 +11,23 @@
                 </mat-form-field>
 
                 <mat-form-field apperance="outline">
-                    <mat-label>Masina</mat-label>
-                    <input matInput placeholder="Car" formControlName="car"/>
+                    <mat-label>Brand masina</mat-label>
+                    <input matInput placeholder="Car Brand" formControlName="carBrand"/>
                 </mat-form-field>
 
                 <mat-form-field apperance="outline">
-                    <mat-label>Tip</mat-label>
-                    <input matInput placeholder="Type" formControlName="type"/>
+                    <mat-label>Model masina</mat-label>
+                    <input matInput placeholder="Car Model" formControlName="carModel"/>
                 </mat-form-field>
 
                 <mat-form-field apperance="outline">
                     <mat-label>Pret</mat-label>
                     <input matInput placeholder="Price" formControlName="price"/>
+                </mat-form-field>
+
+                <mat-form-field apperance="outline">
+                    <mat-label>CarID</mat-label>
+                    <input matInput placeholder="CarID" formControlName="carID"/>
                 </mat-form-field>
                 
             </form>
@@ -35,6 +37,6 @@
                 Message
             </p>
         </div> -->
-        <button mat-raised-button (click)="newbodykit()" appHoverBtn>Adauga bodykit-ul</button>
+        <button mat-raised-button (click)="addBK()" appHoverBtn>Adauga bodykit-ul</button>
     </div>
     </section>

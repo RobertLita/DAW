@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { EditRimComponent } from '../../shared/edit-rim/edit-rim.component';
 import { RimsService } from 'src/app/services/rims.service';
+import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-rim',
@@ -20,12 +22,13 @@ export class RimComponent implements OnInit {
     price: 0,
     et: 0,
     j: 0,
-    hubSize: 'default fuel',
+    hubSize: 'default hubsize',
   }
 
   constructor(
     private route: ActivatedRoute,
     private rimService: RimsService,
+    public dialog: MatDialog,
   ) { }
 
   ngOnInit(): void {
@@ -43,6 +46,25 @@ export class RimComponent implements OnInit {
       (result) => {
         this.rim = result;
         console.log(result);
+      }
+    );
+  }
+
+  public openModal(rim: any): void {
+    const data = {
+      rim
+    };
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '550px';
+    dialogConfig.data = data;
+    const dialogRef = this.dialog.open(EditRimComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(
+      (result) => {
+      console.log(result);
+      window.location.reload();
+      },
+      (error) => {
+        console.error(error);
       }
     );
   }

@@ -60,7 +60,7 @@ namespace proiect_daw.Managers
         {
             var newBodykit = new Bodykit
             {
-                BodykitID = model.BodykitID,
+                
                 Brand = model.Brand,
                 CarBrand = model.CarBrand,
                 CarModel = model.CarModel,
@@ -71,9 +71,9 @@ namespace proiect_daw.Managers
 
             bodykitsRepository.Create(newBodykit);
         }
-        public void Update(BodykitModel model)
+        public void Update(BodykitModel model, int id)
         {
-            var bodykit = GetBodykitById(model.BodykitID);
+            var bodykit = GetBodykitById(id);
 
             bodykit.Brand = model.Brand;
             bodykit.CarBrand = model.CarBrand;

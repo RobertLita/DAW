@@ -26,7 +26,7 @@ namespace proiect_daw.Controllers
 
         [HttpGet]
         //[Authorize(Policy = "BasicUser")]
-        public async Task<IActionResult> GetRims()
+        public async Task<IActionResult> GetBodykits()
         {
             var bodykits = manager.GetBodykits();
 
@@ -69,10 +69,10 @@ namespace proiect_daw.Controllers
 
             return Ok();
         }
-        [HttpPut]
-        public async Task<IActionResult> Update([FromBody] BodykitModel bodykitModel)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update([FromBody] BodykitModel bodykitModel, [FromRoute] int id)
         {
-            manager.Update(bodykitModel);
+            manager.Update(bodykitModel, id);
 
             return Ok();
         }

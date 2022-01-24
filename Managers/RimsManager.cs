@@ -60,7 +60,7 @@ namespace proiect_daw.Managers
         {
             var newRim = new Rim
             {
-                RimID = model.RimID,
+                //RimID = model.RimID,
                 Brand = model.Brand,
                 Size = model.Size,
                 Type = model.Type,
@@ -68,14 +68,14 @@ namespace proiect_daw.Managers
                 ET = model.ET,
                 J = model.J,
                 HubSize= model.HubSize,
-                CarRims = model.CarRims
+                //CarRims = model.CarRims
             };
 
             rimsRepository.Create(newRim);
         }
-        public void Update(RimModel model)
+        public void Update(RimModel model, int id)
         {
-            var rim = GetRimById(model.RimID);
+            var rim = GetRimById(id);
 
             rim.Brand = model.Brand;
             rim.Size = model.Size;
@@ -84,7 +84,7 @@ namespace proiect_daw.Managers
             rim.ET = model.ET;
             rim.J = model.J;
             rim.HubSize = model.HubSize;
-            rim.CarRims = model.CarRims;
+            //rim.CarRims = model.CarRims;
             rimsRepository.Update(rim);
         }
     }

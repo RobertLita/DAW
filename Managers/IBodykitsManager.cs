@@ -13,7 +13,7 @@ namespace proiect_daw.Managers
         List<Bodykit> GetBodykits();
         Bodykit GetBodykitById(int id);
         void Create(BodykitModel model);
-        void Update(BodykitModel model);
+        void Update(BodykitModel model, int id);
         void Delete(int id);
         List<int> GetBodykitsIdsList();
         List<Bodykit> GetBodykitsFiltered(string brand);

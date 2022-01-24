@@ -17,7 +17,8 @@
             <p>J: {{rim.j}}</p>
         </div>
     </a>
+    <mat-icon class="delete" (click) ="deleteRim(rim)">delete</mat-icon>
 </div>
-<button mat-fab color="accent" aria-label="Adauga un set de jante" class="newrim" routerLink="/rims/newrim">
+<button mat-fab color="accent" aria-label="Adauga un set de jante" class="newrim mov" routerLink="/rims/newrim" >
         <mat-icon class="icon">add</mat-icon>
 </button>

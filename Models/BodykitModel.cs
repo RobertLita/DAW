@@ -10,7 +10,7 @@ namespace proiect_daw.Models
     public class BodykitModel
     {
         //[Key]
-        public int BodykitID { get; set; }
+        //public int BodykitID { get; set; }
         //[Required(ErrorMessage = "Brandul bodykit-ului este obligatoriu!")]
         public string Brand { get; set; }
         //[Required(ErrorMessage = "Brandul masinii pentru care este bodykit-ul este obligatoriu!")]
@@ -19,7 +19,7 @@ namespace proiect_daw.Models
         public string CarModel { get; set; }
         //[Required(ErrorMessage = "Prețul bodykit-ului este obligatoriu!")]
         //public string Type { get; set; }
-        public int CarID { get; set; }
         public int Price { get; set; }
+        public int CarID { get; set; }
     }
 }

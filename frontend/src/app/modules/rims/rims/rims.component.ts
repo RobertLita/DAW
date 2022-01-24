@@ -13,7 +13,7 @@ export class RimsComponent implements OnInit {
      hubSize: string}> = [];
 
   constructor(
-    private rimsService: RimsService,
+    private rimsService: RimsService, 
     private router: Router,
   ) { }
 
@@ -31,6 +31,19 @@ export class RimsComponent implements OnInit {
 
   public goToRim(id: any): void{
     this.router.navigate(['/rim', id]);
+  }
+
+  public deleteRim(rim : any): void{
+    console.log(rim);
+    this.rimsService.deleteRim(rim).subscribe(
+      (result) =>{
+        console.log(result);
+        this.rims = result;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 
 }

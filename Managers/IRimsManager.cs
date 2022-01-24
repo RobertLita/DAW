@@ -13,7 +13,7 @@ namespace proiect_daw.Managers
         List<Rim> GetRims();
         Rim GetRimById(int id);
         void Create(RimModel model);
-        void Update(RimModel model);
+        void Update(RimModel model, int id);
         void Delete(int id);
         List<int> GetRimsIdsList();
         List<Rim> GetRimsFiltered(string brand);

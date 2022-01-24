@@ -1,0 +1,78 @@
+<div class="container">
+    <h2>Editeaza masina curenta:</h2>
+    <div class="form-sections">
+        <form [formGroup]="newcarForm" class="form">
+            <mat-form-field apperance="outline">
+                <mat-label>ID</mat-label>
+                <input matInput placeholder="CarID" formControlName="carID"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Brand</mat-label>
+                <input matInput placeholder="Brand" formControlName="brand"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Model</mat-label>
+                <input matInput placeholder="Model" formControlName="model"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Pret</mat-label>
+                <input matInput placeholder="Price" formControlName="price"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Anul</mat-label>
+                <input matInput placeholder="Year" formControlName="year"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>VIN</mat-label>
+                <input matInput placeholder="VIN" formControlName="vin"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Km</mat-label>
+                <input matInput placeholder="Mileage" formControlName="mileage"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Culoare</mat-label>
+                <input matInput placeholder="Color" formControlName="color"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Combustibil</mat-label>
+                <input matInput placeholder="Fuel" formControlName="fuel"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Cai putere</mat-label>
+                <input matInput placeholder="HP" formControlName="hp"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Capacitate cilindrica</mat-label>
+                <input matInput placeholder="Cubic_Capacity" formControlName="cubic_Capacity"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Capacitate baterie</mat-label>
+                <input matInput placeholder="Battery_Capacity" formControlName="battery_Capacity"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Transmisie</mat-label>
+                <input matInput placeholder="Trasmission" formControlName="transmission"/>
+            </mat-form-field>
+
+            <mat-form-field apperance="outline">
+                <mat-label>Tip caroserie</mat-label>
+                <input matInput placeholder="Type" formControlName="type"/>
+            </mat-form-field>
+        </form>
+    </div>
+    <button mat-raised-button  appHoverBtn (click)="editCar()">Actualizeaza masina</button>
+    <!--  -->
+</div>

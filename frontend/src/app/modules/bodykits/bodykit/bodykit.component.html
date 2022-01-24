@@ -20,15 +20,13 @@
             <ul>
                 <li>{{'Brand masina' | marks}}{{bodykit.carBrand}}</li>
                 <li>{{'Model masina' | marks}}{{bodykit.carModel}}</li>
-                <li>{{'ID Masian' | marks}}{{bodykit.carID}}</li>
+                <li>{{'ID Masina' | marks}}{{bodykit.carID}}</li>
             
             </ul>
             </div>
-            <!-- <div class="btn">
-            <button mat-raised-button>Vezi istoricul masinii</button>
-            <button mat-raised-button>Vezi jantele</button>
-            <button mat-raised-button>Vezi bodykit-urile</button>
-            </div> -->
-        </div>
+            <div class="btn">
+                <button mat-raised-button (click)="openModal(bodykit)">Editeaza bodykit-ul</button>
+            </div>
+        </div> 
     </div>
 </div>
