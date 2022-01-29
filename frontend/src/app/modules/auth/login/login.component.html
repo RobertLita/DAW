@@ -1,6 +1,6 @@
 <section>
-<div class="container">
-    <h2>Intră în contul tău chiar aici:</h2>
+<div class="container" *ngIf="user == 'none'">
+    <h2>Intră în contul tău chiar aici: </h2>
     <div class="form-sections">
         <form [formGroup]="loginForm" class="form">
             <mat-form-field apperance="outline">
@@ -14,12 +14,10 @@
             </mat-form-field>
         </form>
     </div>
-    <!-- <div class="message-section">
-        <p>
-            Message
-        </p>
-    </div> -->
     <button mat-raised-button (click)="login()">Login</button>
     <button mat-raised-button routerLink="/login/register">Daca nu ai cont apasa aici</button>
+</div>
+<div class="container" *ngIf="user != 'none'">
+    <button mat-raised-button (click)="logout()">Logout</button>
 </div>
 </section>

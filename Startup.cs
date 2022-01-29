@@ -52,6 +52,8 @@ namespace proiect_daw
             });
 
             services.AddDbContext<Entities.AppContext>(options => options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Initial Catalog=proiect_daw;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+            services.AddIdentity<User, Role>()
+                .AddEntityFrameworkStores<Entities.AppContext>();
             services.AddTransient<ICarsRepository, CarsRepository>();
             services.AddTransient<ICarsManager, CarsManager>();
             services.AddTransient<IRimsRepository, RimsRepository>();
@@ -62,6 +64,9 @@ namespace proiect_daw
             services.AddTransient<IBodykitsManager, BodykitsManager>();
             services.AddTransient<IHistoryRepository, HistoryRepository>();
             services.AddTransient<IHistoryManager, HistoryManager>();
+
+            services.AddTransient<IAuthenticationManager, AuthenticationManager>();
+            services.AddTransient<ITokenManager, TokenManager>();
 
             services.AddAuthorization(opt =>
             {

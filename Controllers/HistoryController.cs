@@ -25,7 +25,6 @@ namespace proiect_daw.Controllers
 
 
         [HttpGet]
-        //[Authorize(Policy = "BasicUser")]
         public async Task<IActionResult> GetHistory()
         {
             var history = manager.GetHistory();
@@ -33,7 +32,6 @@ namespace proiect_daw.Controllers
             return Ok(history);
         }
         [HttpGet("select-id")]
-        //[Authorize(Policy = "Admin")]
         public async Task<IActionResult> GetIds()
         {
             var idList = manager.GetHistoryIdsList();

@@ -11,4 +11,9 @@
         <a routerLink="/cars">Vezi masinile</a>
       </div>
     </div>
+    
   </section>
+<section class="info">
+<p>Esti logat drept: {{loggedUser.username}}</p><br>
+<button mat-raised-button (click)="logout()">Logout</button>
+</section>
