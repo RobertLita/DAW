@@ -52,6 +52,11 @@ namespace proiect_daw.Entities
                 .HasOne(cr => cr.Rim)
                 .WithMany(rim => rim.CarRims)
                 .HasForeignKey(cr => cr.RimID);
+            //One to One
+            builder.Entity<Bodykit>()
+                .HasOne(bodykit => bodykit.Owner)
+                .WithOne(owner => owner.Bodykit)
+                .HasForeignKey<Owner>(h => h.BodykitID);
         }
     }
 }
